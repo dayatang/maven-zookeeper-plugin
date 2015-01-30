@@ -59,6 +59,52 @@
         <developerConnection>scm:git:git@github.com:sfines/maven-zookeeper-plugin.git</developerConnection>
     </scm>
 
+    <repositories>
+        <repository>
+            <id>dayatang-releases</id>
+            <url>http://nexus.dayatang.org/content/groups/public-release</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>dayatang-snapshots</id>
+            <url>http://nexus.dayatang.org/content/groups/public-snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>dayatang-releases</id>
+            <url>http://nexus.dayatang.org/content/groups/public-release</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>dayatang-snapshots</id>
+            <url>http://nexus.dayatang.org/content/groups/public-snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
 
     <dependencies>
         <dependency>
