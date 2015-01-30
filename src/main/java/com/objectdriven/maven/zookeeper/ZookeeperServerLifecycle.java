@@ -7,6 +7,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.maven.plugin.logging.Log;
 import org.apache.zookeeper.server.NIOServerCnxn;
+import org.apache.zookeeper.server.NIOServerCnxnFactory;
 import org.apache.zookeeper.server.ServerConfig;
 import org.apache.zookeeper.server.ZooKeeperServer;
 import org.apache.zookeeper.server.persistence.FileTxnSnapLog;
@@ -23,7 +24,7 @@ import java.util.List;
 public class ZookeeperServerLifecycle {
 
     ServerConfig serverConfig = new ServerConfig();
-    private NIOServerCnxn.Factory cnxnFactory;
+    private NIOServerCnxnFactory cnxnFactory;
     ZooKeeperServer server;
     static Logger logger;
 
@@ -106,7 +107,8 @@ public class ZookeeperServerLifecycle {
         server.setMinSessionTimeout(serverConfig.getMinSessionTimeout());
         server.setMaxSessionTimeout(serverConfig.getMaxSessionTimeout());
 
-        cnxnFactory = new NIOServerCnxn.Factory(
+        cnxnFactory = new NIOServerCnxnFactory();
+        cnxnFactory.configure(
                 serverConfig.getClientPortAddress(),
                 serverConfig.getMaxClientCnxns()
         );
