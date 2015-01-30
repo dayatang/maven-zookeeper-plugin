@@ -54,9 +54,9 @@
     </licenses>
 
     <scm>
-        <url>git@github.com:sfines/maven-zookeeper-plugin.git</url>
-        <connection>scm:git:git@github.com:sfines/maven-zookeeper-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:sfines/maven-zookeeper-plugin.git</developerConnection>
+        <url>git@github.com:dayatang/maven-zookeeper-plugin.git</url>
+        <connection>scm:git:git@github.com:dayatang/maven-zookeeper-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:dayatang/maven-zookeeper-plugin.git</developerConnection>
     </scm>
 
     <repositories>
@@ -146,12 +146,20 @@
     </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.6</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
-                <version>2.6</version>
-
+                <version>3.4</version>
                 <executions>
                     <execution>
                         <id>generated-helpmojo</id>
@@ -164,7 +172,7 @@
 	    <plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-compiler-plugin</artifactId>
-		<version>2.3.2</version>
+		<version>3.2</version>
 		<configuration>
 			<source>1.6</source>
 			<target>1.6</target>
@@ -178,7 +186,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
-                <version>2.6</version>
+                <version>3.4</version>
             </plugin>
         </plugins>
     </reporting>
